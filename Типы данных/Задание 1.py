@@ -1,2 +1,2 @@
 n = input()
-print(n.split(","))
+print(n.split(" ")[::-1])
