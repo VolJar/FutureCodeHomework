@@ -1,17 +1,18 @@
-import math
-
 ans = []
 
 
-def prime(n):
-    for i in range(2, int(math.sqrt(n))):
-        if n % i == 0:
-            return False
-    return True
+def is_prime(n):
+    if n % 2 == 0:
+        return n == 2
+    d = 3
+    while d * d <= n and n % d != 0:
+        d += 2
+    return d * d > n
 
 
 n_1 = int(input())
-for j in range(1, n_1 + 1):
-    if prime(j):
-        ans.append(j)
+for i in range(1, n_1 + 1):
+    if is_prime(i):
+        ans.append(i)
+
 print(ans)
